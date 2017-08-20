@@ -11,7 +11,7 @@ var g = function (id) {
 var Timeline = function () {
     this.order = [];     //动画序列
     this.add = function (timeout, func, log) {
-        this.order.push({              //push()向数组的末尾添加一个或更多元素，并返回新的长度。
+        this.order.push({
             timeout: timeout, func: func, log: log
         })
     };
@@ -23,7 +23,7 @@ var Timeline = function () {
                 var fn = me.func;
                 var log = me.log;
 
-                timeout = Math.max(timeout - (ff || 0), 0);                  //????????????  (ff||0)
+                timeout = Math.max(timeout - (ff || 0), 0);                  //  (ff||0)
 
                 setTimeout(fn, timeout);
                 setTimeout(function () {
@@ -131,13 +131,13 @@ s3.add(3600, function () {
 
 s3.add(5000,function () {
     s3.start();
-})
+});
 //s1.start();
 
 //图片加载器
 var imgs = ['img/zzr_2.png','img/zzr_3.png','img/zzr_4.png'];
 var imgs_onload = function () {
-    imgs.pop();                        //pop()	删除并返回数组的最后一个元素
+    imgs.pop();
     if (imgs.length == 0) {
         s1.start()
     }
